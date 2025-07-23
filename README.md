@@ -8,13 +8,13 @@ Please refer to the official [DeepWiki page](https://deepwiki.com/ppl-ai/modelco
 
 *Credits: DeepWiki powered by Devin*
 
-![System Architecture](perplexity-ask/assets/system_architecture.png)
+![System Architecture](assets/system_architecture.png)
 
 
 
 
 
-![Demo](perplexity-ask/assets/demo_screenshot.png)
+![Demo](assets/demo_screenshot.png)
 
 
 ## Tools
@@ -37,10 +37,10 @@ Clone this repository:
 git clone git@github.com:ppl-ai/modelcontextprotocol.git
 ```
 
-Navigate to the `perplexity-ask` directory and install the necessary dependencies:
+Install the necessary dependencies:
 
 ```bash
-cd modelcontextprotocol/perplexity-ask && npm install
+npm install
 ```
 
 ### Step 2: Get a Sonar API Key
@@ -113,11 +113,11 @@ docker build -t mcp/perplexity-ask:latest -f Dockerfile .
 
 Let's make sure Claude for Desktop is picking up the two tools we've exposed in our `perplexity-ask` server. You can do this by looking for the hammer icon:
 
-![Claude Visual Tools](perplexity-ask/assets/visual-indicator-mcp-tools.png)
+![Claude Visual Tools](assets/visual-indicator-mcp-tools.png)
 
 After clicking on the hammer icon, you should see the tools that come with the Filesystem MCP Server:
 
-![Available Integration](perplexity-ask/assets/available_tools.png)
+![Available Integration](assets/available_tools.png)
 
 If you see both of these this means that the integration is active. Congratulations! This means Claude can now ask Perplexity. You can then simply use it as you would use the Perplexity web app.  
 
@@ -136,13 +136,13 @@ You can also use our MCP with Cursor (or any other app that supports this). To u
 
 ### Step 1: Navigate to your Cursor settings:
 
-![Cursor Settings](perplexity-ask/assets/cursor-settings.png)
+![Cursor Settings](assets/cursor-settings.png)
 
 ### Step 2: Navigate to the MCP directory
 
 And click on `Add new global MCP server`
 
-![Add Server](perplexity-ask/assets/cursor-mcp-directory.png)
+![Add Server](assets/cursor-mcp-directory.png)
 
 
 ### Step 3: Insert the MCP Server Configuration from above 
@@ -151,7 +151,7 @@ This is the same configuration you would use for any other application that supp
 
 You should then see the application being part of your available tools like this:
 
-![Cursor MCP](perplexity-ask/assets/perplexity-ask-mcp-cursor.png)
+![Cursor MCP](assets/perplexity-ask-mcp-cursor.png)
 
 
 ## License
