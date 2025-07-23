@@ -263,12 +263,14 @@ function createServerInstance() {
 // Parse command line arguments
 function parseArgs() {
   const args = process.argv.slice(2);
-  const options: { port?: number } = {};
+  const options: { port?: number; stdio?: boolean } = {};
   
   for (let i = 0; i < args.length; i++) {
     if (args[i] === '--port' && i + 1 < args.length) {
       options.port = parseInt(args[i + 1], 10);
       i++;
+    } else if (args[i] === '--stdio') {
+      options.stdio = true;
     }
   }
   
@@ -372,15 +374,16 @@ function startHttpServer(port: number) {
 async function runServer() {
   const options = parseArgs();
   
-  if (options.port) {
-    // HTTP mode
-    startHttpServer(options.port);
-  } else {
-    // STDIO mode (default)
+  if (options.stdio) {
+    // STDIO mode (only if --stdio flag is used)
     const serverInstance = createServerInstance();
     const transport = new StdioServerTransport();
     await serverInstance.connect(transport);
     console.error("Perplexity MCP Server running on stdio with Ask, Research, and Reason tools");
+  } else {
+    // HTTP mode (default) - use specified port or default to 8080
+    const port = options.port || 8080;
+    startHttpServer(port);
   }
 }
 
