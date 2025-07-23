@@ -19,9 +19,9 @@
   "license": "MIT",
   "author": "Model Context Protocol (https://modelcontextprotocol.io)",
   "type": "module",
-  "main": "dist/server.js",
+  "main": "dist/index.js",
   "bin": {
-    "mcp-server-perplexity-ask": "dist/server.js"
+    "mcp-server-perplexity-ask": "dist/index.js"
   },
   "files": [
     "dist"
@@ -30,10 +30,10 @@
     "build": "tsc && shx chmod +x dist/*.js",
     "prepare": "npm run build",
     "watch": "tsc --watch",
-    "start": "node dist/server.js",
-    "start:http": "node dist/server.js --port 8080",
-    "dev": "tsc && node dist/server.js",
-    "dev:http": "tsc && node dist/server.js --port 8080"
+    "start": "node dist/index.js",
+    "start:http": "node dist/index.js --port 8080",
+    "dev": "tsc && node dist/index.js",
+    "dev:http": "tsc && node dist/index.js --port 8080"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.1",
